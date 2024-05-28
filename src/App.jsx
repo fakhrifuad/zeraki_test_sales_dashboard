@@ -1,5 +1,6 @@
 import './App.css';
 import Dashboard from './components/Dashboard';
+import Schools from './components/Schools';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -8,6 +9,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/schools" element={<Schools />} />
+
        {/* <Route path="/about" element={<About />} />*/}
 
 
