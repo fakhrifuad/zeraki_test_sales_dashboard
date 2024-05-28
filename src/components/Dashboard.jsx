@@ -1,22 +1,26 @@
 import React from 'react';
-import '../styles/Home.css'; 
+import '../styles/Dashboard.css'; 
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
 
-const Home = () => {
+const Dashboard = () => {
   
     return (
       <div className='dashboard'>
         <Sidebar />
-        <div className='dashboard_items'>
-          <h1>DASHBOARD</h1>
-        </div>
+        <div className="dashboard_container">
+          <div className='dashboard_cards'>
+            <div className="card">Total Revenue</div>
+            <div className="card">Collections</div>
+            <div className="card">Sign-ups</div>
+            <div className="card">Bounced Cheques</div>
 
-        <Footer />
+          </div>
+        </div>
 
       </div>
     );
   };
   
-  export default Home;
+  export default Dashboard;
