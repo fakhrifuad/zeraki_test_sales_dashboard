@@ -1,0 +1,40 @@
+.schools_container {
+    margin-left: 20%;
+
+
+}
+
+.schools_cards {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin : 1rem;
+    
+}
+
+.schools_cards .card {
+    width: 30%;
+    height: 20rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #d5d5d5;
+    margin-right: 1rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    .schools_cards {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .schools_cards .card {
+        width: 95%;
+    }
+}
+
