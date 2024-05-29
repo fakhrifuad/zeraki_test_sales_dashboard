@@ -40,11 +40,12 @@ const Dashboard = () => {
     <div className="dashboard">
       <Sidebar />
       <div className="dashboard_container">
+        <h1>Dashboard</h1>
         <div className="dashboard_cards">
-          <div className="card">Total Revenue: ${totalRevenue}</div>
-          <div className="card">Collections: {totalCollections}</div>
-          <div className="card">Sign-ups: {totalSignUps}</div>
-          <div className="card">Bounced Cheques: {bouncedCheques}</div>
+          <div className="card"><h2>{totalRevenue} /= </h2><span>Total Revenue</span></div>
+          <div className="card"><h2>{totalCollections}</h2><span>Collections</span></div>
+          <div className="card"><h2>{totalSignUps}</h2><span>Sign-ups</span></div>
+          <div className="card"><h2>{bouncedCheques}</h2><span>Bounced Cheques</span> </div>
         </div>
       </div>
       <Footer />
