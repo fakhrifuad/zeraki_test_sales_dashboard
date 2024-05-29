@@ -1,0 +1,47 @@
+
+.school-details-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .school-details-content {
+    margin-left: 20%; /* Same width as the sidebar */
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .school-details-content h1 {
+    margin-bottom: 20px;
+  }
+  
+  .school-details-content h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .school-details-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .school-details-content ul li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .school-details-content ul li h3 {
+    margin-top: 0;
+  }
+  
+  .school-details-content ul ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .school-details-content ul ul li {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  

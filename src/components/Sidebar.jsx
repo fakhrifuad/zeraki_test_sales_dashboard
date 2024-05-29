@@ -9,14 +9,18 @@ import { IoIosPaper } from "react-icons/io"; */}
 const Sidebar =() => {
         // Function to show the side navigation
     const showmenu_list = () => {
+        const close_icon = document.querySelector('close_icon');
         const menu_list = document.querySelector('.menu_list');
         menu_list.style.display = 'flex';
+        close_icon.style.display = 'flex';
     };
 
     // Function to hide the side navigation
-    const hidenav_side = () => {
-        const nav_side = document.querySelector('.menu_list');
-        nav_side.style.display = 'none';
+    const hidemenu_list = () => {
+        const menu_list = document.querySelector('.menu_list');
+        const menu_item_span = document.querySelector('.menu_list .item span');
+        menu_list.style.display = 'none';
+        menu_item_span.style.display = 'none';
     };
 
 
@@ -25,17 +29,19 @@ const Sidebar =() => {
     return(
       <div className='menu'>
         <button className='menu_icon' onClick={showmenu_list}><IoMenu/></button>
+        <button className='close_icon' onClick={hidemenu_list}><IoClose/></button>
+
         <div className='logo'>
           <h2>Zeraki Sales</h2>
         </div> 
 
         <ul className='menu_list'>
             <li className='item'>
-                <Link to="/"><IoHome /><span>Dashboard</span></Link>
+                <Link to="/" className='text_link'><IoHome /><span>Dashboard</span></Link>
             </li>
 
             <li className='item'>
-                <Link to="/schools"><IoSchool /><span>Schools</span></Link>
+                <Link to="/schools" className='text_link'><IoSchool /><span>Schools</span></Link>
             </li>
 
             {/*<li className='item'>

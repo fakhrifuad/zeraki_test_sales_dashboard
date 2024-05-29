@@ -1,0 +1,69 @@
+{
+    "schools": [
+      {
+        "id": 1,
+        "name": "School A",
+        "type": "Primary",
+        "county": "County A",
+        "registrationDate": "2023-01-01",
+        "contactInfo": "contact@schoola.com",
+        "products": ["Zeraki Analytics", "Zeraki Finance"],
+        "balance": 1000
+      },
+      {
+        "id": 2,
+        "name": "School B",
+        "type": "Secondary",
+        "county": "County B",
+        "registrationDate": "2023-02-01",
+        "contactInfo": "contact@schoolb.com",
+        "products": ["Zeraki Timetable"],
+        "balance": 500
+      }
+    ],
+    "invoices": [
+      {
+        "id": 1,
+        "schoolId": 1,
+        "invoiceNumber": "INV001",
+        "items": ["Zeraki Analytics", "Zeraki Finance"],
+        "creationDate": "2023-03-01",
+        "dueDate": "2023-04-01",
+        "amount": 1000,
+        "paidAmount": 500,
+        "balance": 500,
+        "status": "Pending"
+      },
+      {
+        "id": 2,
+        "schoolId": 2,
+        "invoiceNumber": "INV002",
+        "items": ["Zeraki Timetable"],
+        "creationDate": "2023-03-05",
+        "dueDate": "2023-04-05",
+        "amount": 500,
+        "paidAmount": 500,
+        "balance": 0,
+        "status": "Completed"
+      }
+    ],
+    "collections": [
+      {
+        "id": 1,
+        "invoiceId": 1,
+        "collectionNumber": "COL001",
+        "date": "2023-03-15",
+        "amount": 500,
+        "status": "Valid"
+      },
+      {
+        "id": 2,
+        "invoiceId": 2,
+        "collectionNumber": "COL002",
+        "date": "2023-03-20",
+        "amount": 500,
+        "status": "Valid"
+      }
+    ]
+  }
+  
