@@ -5,9 +5,13 @@
   }
   
   .school-details-content {
-    margin-left: 20%; /* Same width as the sidebar */
-    flex: 1;
-    padding: 20px;
+    width: 100%;
+    border-radius: 1.25rem;
+    background-color: #d5d5d5;
+    margin-left: 17%;
+    margin-right: 1%;
+    margin-top: 1rem;
+    padding: 1rem;
   }
   
   .school-details-content h1 {
@@ -34,22 +38,58 @@
     margin-top: 0;
   }
   
-  .school-details-content ul ul {
-    list-style-type: none;
-    padding: 0;
+  .invoice_details {
+    background: #ffffff;
+    padding: 1rem;
   }
+
+
   
-  .school-details-content ul ul li {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
+
+  .invoice_buttons {
+    margin-top: 1.25rem;
   }
-  
-  .school-details-content button {
-    margin-right: 10px;
+
+  .delete_button {
+    background: #ff0000;
+    border-radius: 0.25rem;
+    border: solid 2px #ff0000;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+
+  .delete_button:hover {
+    color: #ff0000;
+    background: #d5d5d5;
+    border: solid 2px #ff0000;   
   }
   
   .school-details-content input {
-    margin-right: 10px;
-    padding: 5px;
+    margin-right: 0.5rem;
+    padding: 0.35rem;
+    
   }
+
+.add_button  {
+    background: #4880FF;
+    border-radius: 0.25rem;
+    border: solid 2px #4880FF;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+
+.add_button:hover {
+    color: #4880FF;
+    background: #d5d5d5;
+    border: solid 2px #4880FF;
+}

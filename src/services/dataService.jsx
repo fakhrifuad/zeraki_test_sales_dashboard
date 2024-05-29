@@ -12,6 +12,16 @@ export const fetchSchools = async () => {
   return data;
 };
 
+// Fetches details of a specific school
+export const fetchSchoolById = async (schoolId) => {
+    const response = await fetch(`${API_URL}/schools/${schoolId}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch school with id ${schoolId}`);
+    }
+    const data = await response.json();
+    return data;
+  };
+
 // Fetches invoices for a specific school
 export const fetchInvoicesBySchool = async (schoolId) => {
   const response = await fetch(`${API_URL}/invoices?schoolId=${schoolId}`);
