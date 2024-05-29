@@ -32,7 +32,7 @@ const Sidebar =() => {
         <button className='close_icon' onClick={hidemenu_list}><IoClose/></button>
 
         <div className='logo'>
-          <h2>Zeraki Sales</h2>
+          <h2>Zeraki</h2><span>Sales</span>
         </div> 
 
         <ul className='menu_list'>

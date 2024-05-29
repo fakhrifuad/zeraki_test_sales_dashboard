@@ -1,12 +1,14 @@
-
+.schools {
+    display: flex;
+    height: 90vh;
+}
 
 .schools-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    width: 100%;
     border-radius: 1.25rem;
-    background-color: #ffffff;
-    margin-left: 20%;
+    background-color: #d5d5d5;
+    margin-left: 17%;
+    margin-right: 1%;
     margin-top: 1rem;
     padding: 1rem;
     
@@ -16,32 +18,52 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+
+  }
+
+  .schools-table tbody {
+    background-color: #ffffff;
   }
   .schools-table th,
   .schools-table td {
-    border: 1px solid #ddd;
+    border: 1.5px solid #ddd;
     padding: 8px;
   }
   
   .schools-table th {
-    background-color: #f2f2f2;
-    text-align: left;
+    background-color: #4880FF;
   }
   
-  .schools-table tr:nth-child(even) {
-    background-color: #2c569170;
-  }
   
   .schools-table tr:hover {
     background-color: #ddd;
   }
   
   .schools-table th {
+    text-align: left;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    background-color: #2c5691;
+    background-color: #4880FF;
     color: #ffffff;
   }
+
+.view_button {
+    background: #008000;
+    border-radius: 0.25rem;
+    border: solid 2px #008000;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+}
+
+
+.view_button:hover {
+    color: #008000;
+    background: #d5d5d5;
+    border: solid 2px #008000;
+}
 
 @media all and (max-width: 600px) {
     .schools_cards {

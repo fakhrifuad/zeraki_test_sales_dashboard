@@ -19,7 +19,7 @@ const Schools = () => {
   }, []);
 
   return (
-    <div className="schools-container">
+    <div className="schools">
       <Sidebar />
       <div className="schools-content">
         <h1>Schools</h1>
@@ -44,7 +44,7 @@ const Schools = () => {
                 <td>{school.contactInfo}</td>
                 <td>{school.products.join(', ')}</td>
                 <td>${school.balance}</td>
-                <td><a href={`/schools/${school.id}`}>View Details</a></td>
+                <td><a href={`/schools/${school.id}`} className='view_button'>View Details</a></td>
               </tr>
             ))}
           </tbody>
