@@ -1,10 +1,10 @@
 .schools {
     display: flex;
-    height: 90vh;
 }
 
 .schools-content {
     width: 100%;
+    min-height: 85vh;
     border-radius: 1.25rem;
     background-color: #d5d5d5;
     margin-left: 17%;
@@ -75,5 +75,15 @@
     .schools_cards .card {
         width: 95%;
     }
+
+    .table_container {
+      overflow-x: auto;
+
+    }
+
+    .schools-content{
+      width: 80%;
+    }
+
 }
 

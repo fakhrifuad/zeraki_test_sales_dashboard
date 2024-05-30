@@ -1,7 +1,5 @@
 // src/services/dataService.js
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001'; // Default to localhost for development
-                                             // Base URL for the API 
-                                            //(change according to your IPv4 address for local host)
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 // Fetches the list of schools
 export const fetchSchools = async () => {

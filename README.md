@@ -48,7 +48,10 @@ The Sales Agent Dashboard is a responsive web application designed to facilitate
   - Mark Collection Status
 
 ## Project Structure
-
+zeraki_test_sales_dashboard
+├── .env
+├── .gitignore
+├── node_modules
 ├── package-lock.json
 ├── package.json
 ├── public

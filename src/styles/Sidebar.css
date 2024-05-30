@@ -2,20 +2,23 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    height: 94vh;
     width: 15%;
     position: fixed;
+    top: 0;
+    left: 0;
     padding-top: 2rem;
-
-
+    transition: transform 0.3s ease-in-out;
+    background-color: white; /* Ensure background color for better visibility */
+    z-index: 1000;
 }
+
+
 .text_link {
     color: inherit;
-    text-decoration: inherit;
+    text-decoration: none;
     width: 100%;
     height: 100%;
     padding: 1rem 0rem 1rem 1.5rem;
-
 }
 
 .logo {
@@ -25,7 +28,6 @@
     padding: 0.5rem;
     border: solid 3px #4880FF;
     width: fit-content;
-
 }
 
 .logo h2 {
@@ -38,7 +40,6 @@
     color: #000000;
     font-size: 1.25rem;
     font-weight: 700;
-
 }
 
 .menu_list {
@@ -47,23 +48,21 @@
     gap: 1rem;
     list-style: none;
     width: 100%;
-
-
 }
 
 .menu_list .item {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    text-decoration: none ;
+    text-decoration: none;
     font-weight: 600;
     border-radius: 0.75rem;
     transition: 0.3s ease-in-out;
-    color: #2e2e2e ;
+    color: #2e2e2e;
     cursor: pointer;
 }
 
-.menu_list .item span{
+.menu_list .item span {
     margin-left: 1rem;
 }
 
@@ -72,33 +71,60 @@
     color: #dde6ed !important;
 }
 
+.menu_icon, .close_icon {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
 
 
 @media all and (max-width: 600px) {
+    .menu {
+        max-width: 70%;
+        height: 100%;
+        z-index: 1;
+    }
+
     .menu_icon {
-        display: flex;
+        display: block;
     }
 
     .close_icon {
         display: none;
+        left: calc(17% - 2rem);
     }
 
     .menu_list .item {
         padding-left: 1.5rem;
-
     }
 
     .menu_list .item span {
+        display: none; 
+    }
+
+    .logo {
         display: none;
     }
+
+
 }
 
 @media all and (min-width: 601px) {
+    .menu {
+        transform: translateX(0);
+    }
+
     .menu_icon {
         display: none;
     }
     .close_icon {
         display: none;
     }
-    
 }
