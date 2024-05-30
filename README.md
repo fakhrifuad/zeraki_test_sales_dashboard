@@ -9,7 +9,7 @@
 - [Usage](#usage)
 - [Design Decisions](#design-decisions)
 - [Local Deployment](#local-deployment)
-- [https://zeraki-test-sales-dashboard.vercel.app/](#deployed-version)
+- [Deployed Version](#https://zeraki-test-sales-dashboard.vercel.app/)
 
 ## Overview
 
