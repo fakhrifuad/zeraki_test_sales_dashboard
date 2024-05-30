@@ -168,7 +168,10 @@ const Dashboard = () => {
           <h2>Signups Overview</h2>
           <div className="chart">
             <h3>Zeraki Analytics</h3>
-            {renderBarChart(analyticsData, 'Zeraki Analytics')}
+            <div className='graph_container'>
+              {renderBarChart(analyticsData, 'Zeraki Analytics')}
+
+            </div>
           </div>
           <div className="chart">
             <h3>Zeraki Finance</h3>

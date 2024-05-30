@@ -71,6 +71,11 @@
   }
 
 @media all and (max-width: 600px) {
+
+  .dashboard_container {
+    margin-top: 5rem;
+    width: 60%;
+  }
     .dashboard_cards {
         flex-direction: column;
         width: 100%;
@@ -80,5 +85,12 @@
     .card {
         width: 95%;
     }
+
+    .chart {
+      overflow-x: auto;
+    }
+
+
+ 
 }
 
