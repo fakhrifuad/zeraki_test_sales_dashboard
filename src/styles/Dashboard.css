@@ -49,11 +49,21 @@
   }
 
   .charts_container {
-    margin-top: 20px;
+    margin: 1.25rem;
+    padding-left: 1.5rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding-top: 1.5rem;
+  }
+
+
+  
+  .charts_container h2 {
+    color: #4880FF;
   }
   
   .chart {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
   
   .chart h3 {
