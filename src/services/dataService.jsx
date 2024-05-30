@@ -1,6 +1,7 @@
 // src/services/dataService.js
 
-const API_URL = 'http://localhost:3001'; // Base URL for the API
+const API_URL = 'http://192.168.100.7:3001'; // Base URL for the API 
+                                            //(change according to your IPv4 address for local host)
 
 // Fetches the list of schools
 export const fetchSchools = async () => {
