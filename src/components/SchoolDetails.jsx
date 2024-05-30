@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchInvoicesBySchool, fetchCollectionsByInvoice, fetchSchoolById, createInvoice, updateInvoice, deleteInvoice, addCollection } from '../services/dataService';
+import { fetchSchoolById, fetchInvoicesBySchool, fetchCollectionsByInvoice, createInvoice, updateInvoice, deleteInvoice, addCollection } from '../services/dataService';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 import '../styles/SchoolDetails.css';
 
 const SchoolDetails = () => {
   const { schoolId } = useParams();
+  const [school, setSchool] = useState({});
   const [invoices, setInvoices] = useState([]);
-  const [school, setSchool] = useState('');
   const [collections, setCollections] = useState([]);
   const [filter, setFilter] = useState('all'); // all, completed, pending
   const [newInvoice, setNewInvoice] = useState({ items: [], amount: '', dueDate: '' });
-  const [newCollection, setNewCollection] = useState({ invoiceId: '', amount: '', status: '' });
-
+  const [newCollection, setNewCollection] = useState({ invoiceId: '', amount: '', status: 'Valid' }); // Default to 'Valid'
 
   useEffect(() => {
     const getSchoolDetails = async () => {
@@ -54,7 +53,7 @@ const SchoolDetails = () => {
   const handleAddCollection = async () => {
     const collection = await addCollection(newCollection);
     setCollections([...collections, collection]);
-    setNewCollection({ invoiceId: '', amount: '', status: '' });
+    setNewCollection({ invoiceId: '', amount: '', status: 'Valid' }); // Reset to default status
     // Update invoice status based on new collection
     handleUpdateInvoice(newCollection.invoiceId, { status: 'Updated' }); // Adjust logic as needed
   };
@@ -69,7 +68,7 @@ const SchoolDetails = () => {
     <div className="school-details-container">
       <Sidebar />
       <div className="school-details-content">
-      <h1>{school.name}</h1> {/* Display the school name */}
+        <h1>{school.name}</h1> {/* Display the school name */}
 
         {/* Filter Invoices */}
         <div>
@@ -83,43 +82,60 @@ const SchoolDetails = () => {
 
         {/* List Invoices */}
         <h2>Invoices</h2>
-        <ul>
+        <div>
           {filteredInvoices.map(invoice => (
-            <li key={invoice.id}>
-              <div className='invoice_details'>
-                <h3><span>Invoice Number:</span> {invoice.invoiceNumber}</h3>
-                <p><span>Items:</span> {invoice.items.join(', ')}</p>
-                <p><span>Creation Date:</span> {invoice.creationDate}</p>
-                <p><span>Due Date:</span> {invoice.dueDate}</p>
-                <p><span>Amount:</span> ${invoice.amount}</p>
-                <p><span>Paid Amount:</span> ${invoice.paidAmount}</p>
-                <p><span>Balance:</span> ${invoice.balance}</p>
-                <p><span>Status:</span> {invoice.status}</p>
-                <p><span>Days Until Due:</span> {/* Calculate days until due */}</p>
-                <div className='invoice_buttons'>
-                    <button onClick={() => getCollections(invoice.id)} className='add_button'>View Collections</button>
-                    <button onClick={() => handleDeleteInvoice(invoice.id)} className='delete_button'>Delete Invoice</button>
-                </div>
+            <div key={invoice.id}>
+              <table className='invoice_details'>
+                <tbody>
+                  <tr>
+                    <td>Invoice Number:</td>
+                    <td>{invoice.invoiceNumber}</td>
+                  </tr>
+                  <tr>
+                    <td>Items:</td>
+                    <td>{invoice.items.join(', ')}</td>
+                  </tr>
+                  <tr>
+                    <td>Creation Date:</td>
+                    <td>{invoice.creationDate}</td>
+                  </tr>
+                  <tr>
+                    <td>Due Date:</td>
+                    <td>{invoice.dueDate}</td>
+                  </tr>
+                  <tr>
+                    <td>Amount:</td>
+                    <td>${invoice.amount}</td>
+                  </tr>
+                  <tr>
+                    <td>Paid Amount:</td>
+                    <td>${invoice.paidAmount}</td>
+                  </tr>
+                  <tr>
+                    <td>Balance:</td>
+                    <td>${invoice.balance}</td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td>
+                    <td>{invoice.status}</td>
+                  </tr>
+                  <tr>
+                    <td>Days Until Due:</td>
+                    <td>{/* Calculate days until due */}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className='invoice_buttons'>
+                <button onClick={() => getCollections(invoice.id)} className='add_button'>View Collections</button>
+                <button onClick={() => handleDeleteInvoice(invoice.id)} className='delete_button'>Delete Invoice</button>
               </div>
-              
-              {/* Update Invoice form can be added here */}
-              <ul>
-                {collections.filter(collection => collection.invoiceId === invoice.id).map(collection => (
-                  <li key={collection.id}>
-                    <p>Collection Number: {collection.collectionNumber}</p>
-                    <p>Date: {collection.date}</p>
-                    <p>Amount: ${collection.amount}</p>
-                    <p>Status: {collection.status}</p>
-                  </li>
-                ))}
-              </ul>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
 
         {/* Create Invoice */}
         <h2>Create Invoice</h2>
-        <div>
+        <div className='add_info_container'>
           <input
             type="text"
             placeholder="Items"
@@ -143,7 +159,7 @@ const SchoolDetails = () => {
 
         {/* Add Collection */}
         <h2>Add Collection</h2>
-        <div>
+        <div className='add_info_container'>
           <input
             type="text"
             placeholder="Invoice ID"
@@ -156,12 +172,13 @@ const SchoolDetails = () => {
             value={newCollection.amount}
             onChange={(e) => setNewCollection({ ...newCollection, amount: e.target.value })}
           />
-          <input
-            type="text"
-            placeholder="Status"
+          <select
             value={newCollection.status}
             onChange={(e) => setNewCollection({ ...newCollection, status: e.target.value })}
-          />
+          >
+            <option value="Valid">Valid</option>
+            <option value="Bounced">Bounced</option>
+          </select>
           <button onClick={handleAddCollection} className='add_button'>Add Collection</button>
         </div>
       </div>

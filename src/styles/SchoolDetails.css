@@ -11,7 +11,8 @@
     margin-left: 17%;
     margin-right: 1%;
     margin-top: 1rem;
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
   }
   
   .school-details-content h1 {
@@ -41,14 +42,27 @@
   .invoice_details {
     background: #ffffff;
     padding: 1rem;
+    width: 60%;
   }
 
 
-  
+  .invoice_details td:nth-child(1) {
+    font-weight: 600;
+  }
+
+  .invoice_details td:nth-child(2) {
+    text-align: right;
+    right: 0;
+  }
 
   .invoice_buttons {
     margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
   }
+  
+
+  
 
   .delete_button {
     background: #ff0000;
@@ -93,3 +107,11 @@
     background: #d5d5d5;
     border: solid 2px #4880FF;
 }
+
+.add_info_container {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
