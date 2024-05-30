@@ -48,6 +48,7 @@ The Sales Agent Dashboard is a responsive web application designed to facilitate
   - Mark Collection Status
 
 ## Project Structure
+```bash
 zeraki_test_sales_dashboard
 ├── .env
 ├── .gitignore
@@ -83,4 +84,4 @@ zeraki_test_sales_dashboard
 │ ├── Schools.css
 │ └── Sidebar.css
 └── vercel.json
-
+```
