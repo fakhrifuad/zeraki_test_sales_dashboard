@@ -31,19 +31,25 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const schools = await fetchSchools();
+        console.log('Fetched schools:', schools);
+
         const invoicesPromises = schools.map(school => fetchInvoicesBySchool(school.id));
         const invoices = await Promise.all(invoicesPromises);
+        console.log('Fetched invoices:', invoices);
 
         let collections = [];
         for (const invoiceArray of invoices) {
-          const collectionPromises = invoiceArray.map(invoice => fetchCollectionsByInvoice(invoice.id));
-          const collectionsArray = await Promise.all(collectionPromises);
-          collections = collections.concat(...collectionsArray);
+          if (invoiceArray) {
+            const collectionPromises = invoiceArray.map(invoice => fetchCollectionsByInvoice(invoice.id));
+            const collectionsArray = await Promise.all(collectionPromises);
+            collections = collections.concat(...collectionsArray);
+          }
         }
+        console.log('Fetched collections:', collections);
 
         setTotalCollections(collections.length);
         setTotalSignUps(schools.length);
-        setTotalRevenue(invoices.flat().reduce((sum, invoice) => sum + invoice.paidAmount, 0));
+        setTotalRevenue(invoices.flat().reduce((sum, invoice) => sum + (invoice ? invoice.paidAmount : 0), 0));
         setBouncedCheques(collections.filter(collection => collection.status === 'Bounced').length);
 
         const analytics = { primary: 0, secondary: 0, igcse: 0 };
@@ -65,6 +71,10 @@ const Dashboard = () => {
             if (school.type === 'IGCSE') timetable.igcse++;
           }
         });
+
+        console.log('Analytics signups:', analytics);
+        console.log('Finance signups:', finance);
+        console.log('Timetable signups:', timetable);
 
         setSchoolSignups({
           analytics,

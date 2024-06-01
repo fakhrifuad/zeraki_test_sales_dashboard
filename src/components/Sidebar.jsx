@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Sidebar.css';
 import { IoHome, IoSchool, IoMenu, IoClose } from "react-icons/io5";
 import { Link } from 'react-router-dom';

@@ -1,29 +1,14 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    },
-    {
-      "src": "src/api/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["src/data/db.json"]
-      }
+  "functions": {
+    "api/server.js": {
+      "memory": 1024,
+      "includeFiles": "db.json"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "src/api/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/(.*)",
+      "destination": "api/server.js"
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "schools": {
+      ".indexOn": ["id"]
+    },
+    "invoices": {
+      ".indexOn": ["schoolId"]
+    },
+    "collections": {
+      ".indexOn": ["invoiceId"]
+    }
+  }
+}

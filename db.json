@@ -1,6 +1,6 @@
 {
-  "schools": [
-    {
+  "schools": {
+    "1": {
       "id": "1",
       "name": "School A",
       "type": "Primary",
@@ -13,7 +13,7 @@
       ],
       "balance": 1000
     },
-    {
+    "2": {
       "id": "2",
       "name": "School B",
       "type": "Secondary",
@@ -25,11 +25,11 @@
       ],
       "balance": 500
     }
-  ],
-  "invoices": [
-    {
+  },
+  "invoices": {
+    "1": {
       "id": "1",
-      "schoolId": 1,
+      "schoolId": "1", 
       "invoiceNumber": "INV001",
       "items": [
         "Zeraki Analytics",
@@ -42,9 +42,9 @@
       "balance": 500,
       "status": "Pending"
     },
-    {
+    "2": {
       "id": "2",
-      "schoolId": 2,
+      "schoolId": "2", 
       "invoiceNumber": "INV002",
       "items": [
         "Zeraki Timetable"
@@ -56,41 +56,41 @@
       "balance": 0,
       "status": "Completed"
     }
-  ],
-  "collections": [
-    {
+  },
+  "collections": {
+    "1": {
       "id": "1",
-      "invoiceId": 1,
+      "invoiceId": "1", 
       "collectionNumber": "COL001",
       "date": "2023-03-15",
       "amount": 500,
       "status": "Valid"
     },
-    {
+    "2": {
       "id": "2",
-      "invoiceId": 2,
+      "invoiceId": "2",
       "collectionNumber": "COL002",
       "date": "2023-03-20",
       "amount": 500,
       "status": "Valid"
     },
-    {
+    "4e1f": {
       "id": "4e1f",
       "invoiceId": "",
       "amount": "",
       "status": ""
     },
-    {
+    "ed59": {
       "id": "ed59",
       "invoiceId": "",
       "amount": "",
       "status": ""
     },
-    {
+    "4bd0": {
       "id": "4bd0",
       "invoiceId": "",
       "amount": "",
       "status": ""
     }
-  ]
+  }
 }
